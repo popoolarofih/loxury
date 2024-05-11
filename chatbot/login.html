@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="sign-in.css">
+</head>
+<body>
+  <div class="container">
+    <div class="login form">
+      <header>Login</header>
+      <h2>Loxury Chatbot</h2>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        <input type="password" id="password" name="password" placeholder="Enter Password" required>
+        <!-- <a href="#">Forgot password?</a> -->
+        <input type="submit" class="button" id="login" name="login" value="Login">
+      <div class="signup">
+        <span class="signup">Don't have an account?
+         <label><a href="index.html">Signup</a></label>
+        </span>
+      </div>
+    </div>
+   
+  </div>
+</body>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+  import { getDatabase, set, ref, update} from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged} from  "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAGeSKhQZ6Kb8zio6KEUArGBm1nG9J0lRo",
+    authDomain: "chatbot-b9ff0.firebaseapp.com",
+    databaseURL: "https://chatbot-b9ff0-default-rtdb.firebaseio.com",
+    projectId: "chatbot-b9ff0",
+    storageBucket: "chatbot-b9ff0.appspot.com",
+    messagingSenderId: "998856388676",
+    appId: "1:998856388676:web:7b3aba9b419935d2c70c11",
+    measurementId: "G-KMMH1J939Q"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const database = getDatabase(app);
+  const auth = getAuth();
+  login.addEventListener('click',(e)=>{
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+        signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+            const dt = new Date();
+            update(ref(database, 'users/' + user.uid),{
+            last_login: dt, 
+        })
+        alert('Welcome Back');
+            // ...
+            window.location.href = 'chatbot.html';
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+
+            alert('Email or Password is incorrect');
+        });
+     });
+     const user = auth.currentUser;
+     onAuthStateChanged(auth, (user) => {
+        if (user) {
+            // User is signed in, see docs for a list of available properties
+            // https://firebase.google.com/docs/reference/js/auth.user
+            const uid = user.uid;
+            // ...
+        } else {
+            // User is signed out
+            // ...
+        }
+     });
+</script>
+</html>
