@@ -5,7 +5,7 @@ const generateResponse = (userMessage) => {
     let response = "";
     const keywords = {
         "hello": ["hello", "hi", "hey", "Evening", "Morning", "Afternoon"],
-        "browse": ["browse", "see jewelry", "view jewelry", "store", "what jewelry do you have", "jewelry"],
+        "browse": ["browse", "see jewelry", "view jewelry", "store", "what jewelry do you have", "jewelry", "What do you have in store"],
         "ring_price": ["ring", "rings","price"],
         "earring_price": ["earring", "earrings","price"],
         "bracelet_price": ["bracelet", "bracelets", "price"],
