@@ -6,14 +6,14 @@ const generateResponse = (userMessage) => {
     const keywords = {
         "hello": ["hello", "hi", "hey", "Evening", "Morning", "Afternoon"],
         "browse": ["browse", "see jewelry", "view jewelry", "store", "what jewelry do you have", "jewelry", "What do you have in store"],
-        "order": ["i want to buy ring", "i want to buy earring", "order", "place order", "buy"],
+        "order": [ "i want to buy ring", "i want to buy earring", "order", "place order", "buy"],
         "ring_price": ["ring", "rings","price"],
         "earring_price": ["earring", "earrings","price"],
         "bracelet_price": ["bracelet", "bracelets", "price"],
         "anklet_price": ["anklet", "anklets","price"],
         "watch_price": ["wrist watch", "wrist watches","price", "watch"],
         "necklace_price": ["necklace", "price"],
-        
+        "Yes": ["yes", "yes i want to order"],
         "complaint": ["complain", "complaint"]
     };
 
@@ -50,6 +50,9 @@ const generateResponse = (userMessage) => {
                         break;
                     case "order":
                         response = "If you want to order please feel free to do so from our store.";
+                        break;
+                    case "Yes":
+                        response = "If you want to see more please contact the sales representative from our store.";
                         break;
                     case "complaint":
                         response = "I apologize for any inconvenience. Please contact our customer service at +234-123-4567 for assistance with complaints.";
