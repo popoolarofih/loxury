@@ -34,16 +34,16 @@ const generateResponse = (userMessage) => {
                         response = "We have various types of rings available, including engagement rings, wedding bands, and fashion rings. Prices range from #1000 to #5000 depending on the type and quality. Would you like to see our collection?";
                         break;
                     case "earring_price":
-                        response = "Our earrings collection includes studs, hoops, and danglers. Prices start from #50 and can go up to #1000 depending on the design and materials used.";
+                        response = "Our earrings collection includes studs, hoops, and danglers. Prices start from #500 and can go up to #1000 depending on the design and materials used.";
                         break;
                     case "bracelet_price":
-                        response = "Bracelets come in gold, silver, and platinum. Prices vary from #80 to #2000 depending on the metal and design.";
+                        response = "Bracelets come in gold, silver, and platinum. Prices vary from #800 to #2000 depending on the metal and design.";
                         break;
                     case "anklet_price":
                         response = "We have stylish anklets available at prices ranging from #3000 to #8500.";
                         break;
                     case "watch_price":
-                        response = "Our wrist watches start from #1000 and go up to #21500 depending on the brand and features.";
+                        response = "Our wrist watches start from #1400 and go up to #21500 depending on the brand and features.";
                         break;
                     case "necklace_price":
                         response = "Necklaces are available in gold, silver, and diamond options. Prices range from #1050 to #85000 depending on the material and design.";
