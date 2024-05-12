@@ -46,16 +46,16 @@ const generateResponse = (userMessage) => {
                         response = "Our wrist watches start from #1000 and go up to #21500 depending on the brand and features.";
                         break;
                     case "necklace_price":
-                        response = "Necklaces are available in gold, silver, and diamond options. Prices range from #1050 to $85000 depending on the material and design.";
+                        response = "Necklaces are available in gold, silver, and diamond options. Prices range from #1050 to #85000 depending on the material and design.";
                         break;
                     case "order":
                         response = "If you want to order please feel free to do so from our store.";
                         break;
                     case "Yes":
-                        response = "If you want to see more please contact the sales representative from our store.";
+                        response = "If you want to see more please contact the sales representative from our store on 08050985018";
                         break;
                     case "complaint":
-                        response = "I apologize for any inconvenience. Please contact our customer service at +234-123-4567 for assistance with complaints.";
+                        response = "I apologize for any inconvenience. Please contact our customer service at 08050985018 for assistance with complaints.";
                         break;
                     default:
                         response = "I'm sorry, I didn't understand that. How can I assist you with your jewelry needs?";
