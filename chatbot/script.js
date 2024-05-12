@@ -52,7 +52,7 @@ const generateResponse = (userMessage) => {
                         response = "If you want to order please feel free to do so from our store.";
                         break;
                     case "Yes":
-                        response = "If you want to see more please contact the sales representative from our store on 08050985018";
+                        response = "If you want to see more please contact the sales representative from our store on 08050985018 or inioluwadawodu@gmail.com";
                         break;
                     case "complaint":
                         response = "I apologize for any inconvenience. Please contact our customer service at 08050985018 for assistance with complaints.";
